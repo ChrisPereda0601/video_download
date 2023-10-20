@@ -1,0 +1,31 @@
+name: video_downlad
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  # http requests
+  http: ^1.1.0
+  # state managment
+  provider: ^6.0.5
+  # video player
+  video_player: ^2.7.2
+  # Access to local storage
+  path_provider: ^2.1.1
+  # Ask for permissions
+  permission_handler: ^11.0.1
+  # NoSQL isar database management
+  isar_flutter_libs: ^3.1.0+1
+  isar: ^3.1.0+1
+  sqflite: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
