@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
               MaterialButton(
                 child: Text("Descargar"),
                 onPressed: () {
-                  // TODO 8: descargar video
+                  // 8: descargar video
                   provider.descargarVideo();
                 },
               ),
@@ -42,7 +42,8 @@ class HomePage extends StatelessWidget {
               MaterialButton(
                   child: Text("Borrar video"),
                   onPressed: () {
-                    // TODO: removeer video de almacenamiento y BD
+                    // : removeer video de almacenamiento y BD
+                    provider.eliminarVideo();
                   }),
               _showText(provider),
             ],
@@ -66,7 +67,11 @@ class HomePage extends StatelessWidget {
     if (provider.videoPath != null) {
       return Text("Archivo guardado en: ${provider.videoPath!}");
     } else {
-      if (!provider.isPermissionGranted) {
+      if (provider.videoPath == null &&
+          provider.isSavedSuccess == null &&
+          provider.isDeletedSuccess != null) {
+        return Text("Video eliminado del almacenamiento");
+      } else if (!provider.isPermissionGranted) {
         return Text("Se requieren permisos de almacenamiento.");
       } else if (provider.isSavedSuccess != null &&
           provider.isSavedSuccess == false) {

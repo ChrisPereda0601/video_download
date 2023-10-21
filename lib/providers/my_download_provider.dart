@@ -8,6 +8,7 @@ import 'package:permission_handler/permission_handler.dart';
 class MyDownloadProvider with ChangeNotifier {
   bool isPermissionGranted = false;
   bool? isSavedSuccess;
+  bool? isDeletedSuccess;
   bool isLoading = false;
   String videoName = "butterfly";
   String? videoPath;
@@ -34,6 +35,25 @@ class MyDownloadProvider with ChangeNotifier {
       isLoading = false;
       print("Error al descargar archivo: ${e.toString()}");
       notifyListeners();
+    }
+  }
+
+  Future<void> eliminarVideo() async {
+    if (videoPath != null) {
+      File file = File(videoPath!);
+      if (file.existsSync()) {
+        await file.delete(); //Eliminamos el archivo si este existe
+
+        print("Archivo eliminado de $videoPath");
+        videoPath = null;
+        isSavedSuccess = null;
+        isDeletedSuccess = true;
+        notifyListeners();
+      } else {
+        print("El archivo no existe ne la ruta $videoPath");
+      }
+    } else {
+      print("La ruta no está definida, no es posible eliminar");
     }
   }
 

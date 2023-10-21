@@ -50,7 +50,8 @@ class VideoPage extends StatelessWidget {
                   icon: Icon(Icons.save),
                   label: Text("Guardar"),
                   onPressed: () {
-                    // TODO 9: guardar preferencias
+                    // 9: guardar preferencias
+                    provider.saveConfigs();
                   },
                 ),
                 MaterialButton(
