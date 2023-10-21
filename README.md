@@ -1,6 +1,13 @@
 # video_downlad
 
-A new Flutter project.
+Listado de temas plasmados:
+
+Lo que más me costó trabajo:
+
+Lo que aprendí:
+
+Screenshots de la app:
+
 
 ## Getting Started
 
