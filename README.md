@@ -7,6 +7,7 @@ Listado de temas plasmados:
 - Manejo de excepciones y errores
 - Base de datos con SQFLite
 - Operaciones CRUD
+- Acceso al almacenamiento interno
   
 Lo que más me costó trabajo:
 - Implementación de base de datos para guardar localmente
